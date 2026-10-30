@@ -1,0 +1,16 @@
+# 외부 실행 파일 (fetch-deps.ps1 로 내려받음)
+bin/
+
+# 빌드 결과 (build.bat 이 생성)
+dist/
+
+# 실행 파일 / 압축 파일이 다른 경로에 실수로 커밋되지 않도록
+*.exe
+*.zip
+
+# 로그인 쿠키 (평문 인증 정보)
+cookies.txt
+
+# Windows
+Thumbs.db
+desktop.ini
