@@ -17,6 +17,7 @@ echo [1] 파일 복사 중...
 copy /Y "YTLoader.exe" "%INSTALL_DIR%" >nul
 copy /Y "yt-dlp.exe"  "%INSTALL_DIR%" >nul
 copy /Y "ffmpeg.exe"  "%INSTALL_DIR%" >nul
+copy /Y "deno.exe"    "%INSTALL_DIR%" >nul
 
 REM 아이콘 별도 배포했으면 같이 복사
 if exist "YTLoader.ico" (

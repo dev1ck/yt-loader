@@ -30,6 +30,12 @@ if (-not (Test-Path $ffmpegPath)) {
     $ffmpegPath = $null
 }
 
+# deno 경로 (YouTube 추출용 JS 런타임. 같은 폴더에 있으면 yt-dlp에 직접 지정, 없으면 PATH 사용)
+$denoPath = Join-Path $scriptDir "deno.exe"
+if (-not (Test-Path $denoPath)) {
+    $denoPath = $null
+}
+
 # 로그인 데이터 (쿠키 파일 / 로그인 전용 브라우저 프로필)
 $dataDir = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'YTLoader'
 $cookieFile = Join-Path $dataDir 'cookies.txt'
@@ -446,6 +452,9 @@ function Build-YtDlpArgs($url, $dir) {
 
     if ($ffmpegPath) {
         $ytArgs.AddRange([string[]]@("--ffmpeg-location", $ffmpegPath))
+    }
+    if ($denoPath) {
+        $ytArgs.AddRange([string[]]@("--js-runtimes", "deno:$denoPath"))
     }
 
     if ($rbAudio.Checked) {

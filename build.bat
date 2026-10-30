@@ -64,11 +64,11 @@ goto :END_ZIP_PACKAGE
 :MAKE_ZIP_PACKAGE
 echo.
 echo [3] 배포용 ZIP 패키지 생성 중...
-echo   포함 파일: YTLoader.exe, YTLoader.ico, yt-dlp.exe, ffmpeg.exe, install.bat, uninstall.bat
+echo   포함 파일: YTLoader.exe, YTLoader.ico, yt-dlp.exe, ffmpeg.exe, deno.exe, install.bat, uninstall.bat
 
 powershell -NoProfile -Command ^
   "$zipName = '%ZIP_NAME%';" ^
-  "$files = @('YTLoader.exe','YTLoader.ico','yt-dlp.exe','ffmpeg.exe','install.bat','uninstall.bat');" ^
+  "$files = @('YTLoader.exe','YTLoader.ico','yt-dlp.exe','ffmpeg.exe','deno.exe','install.bat','uninstall.bat');" ^
   "$existing = $files | Where-Object { Test-Path $_ };" ^
   "if (-not $existing -or $existing.Count -eq 0) { Write-Error '압축할 대상 파일이 없습니다.'; exit 1 }" ^
   "if (Test-Path $zipName) { Remove-Item $zipName -Force }" ^
