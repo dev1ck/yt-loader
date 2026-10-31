@@ -31,7 +31,7 @@ if (-not $Pack) { return }
 # $releasesDir 에 이전 버전 패키지가 있으면 델타 패키지도 만듦 (CI는 vpk download github 로 받아 둠)
 Write-Output '[3] Velopack 패키지 생성 중...'
 dotnet tool restore
-dotnet vpk pack -u YTLoader --packTitle YTLoader --packAuthors dev1ck -v $Version -p $publishDir -e YTLoader.exe -i assets\YTLoader.ico -o $releasesDir
+dotnet vpk pack -u YTLoader --packTitle YTLoader --packAuthors ytloader -v $Version -p $publishDir -e YTLoader.exe -i assets\YTLoader.ico -o $releasesDir
 if ($LASTEXITCODE) { throw '패키지 생성 실패' }
 
 Write-Output "완료: $releasesDir"
