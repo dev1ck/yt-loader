@@ -20,7 +20,7 @@ namespace YTLoader;
 public partial class MainWindow : WpfUi.FluentWindow
 {
     // 앱 업데이트를 받을 GitHub 저장소 (Releases)
-    const string RepoUrl = "https://github.com/dev1ck/yt-loader";
+    const string RepoUrl = "https://github.com/ytloader/windows";
 
     // ---------------------------------
     // 포맷 / 품질 목록 (값, 표시 이름)

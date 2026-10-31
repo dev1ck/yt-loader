@@ -2,6 +2,8 @@
 
 yt-dlp 기반 개인용 YouTube 다운로더 (Windows, WPF · Fluent 디자인)
 
+Android판: [ytloader/android](https://github.com/ytloader/android)
+
 - 링크를 넣으면 썸네일 · 제목 · 길이 · 해상도 · 음질 미리보기 (불러오는 중에도 다운로드 가능)
 - 오디오(MP3 / M4A / OPUS / FLAC / WAV) 또는 영상(MP4 / MKV / WEBM) 다운로드
 - 썸네일 · 메타데이터 삽입, 재생목록 전체 다운로드
@@ -12,7 +14,7 @@ yt-dlp 기반 개인용 YouTube 다운로더 (Windows, WPF · Fluent 디자인)
 
 ## 설치
 
-[Releases](https://github.com/dev1ck/yt-loader/releases/latest)에서 `YTLoader-win-Setup.exe` 를 받아 실행합니다.
+[Releases](https://github.com/ytloader/windows/releases/latest)에서 `YTLoader-win-Setup.exe` 를 받아 실행합니다.
 
 - `%LOCALAPPDATA%\YTLoader` 에 설치되고 바탕화면 · 시작 메뉴 바로가기가 생성됩니다. (관리자 권한 불필요)
 - 앱을 시작할 때 새 버전을 확인하고, 동의하면 받아서 적용한 뒤 다시 시작합니다. (변경분만 받는 델타 업데이트)
