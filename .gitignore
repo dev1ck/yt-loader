@@ -14,3 +14,7 @@ cookies.txt
 # Windows
 Thumbs.db
 desktop.ini
+
+# .NET 빌드 중간 파일
+obj/
+.vs/

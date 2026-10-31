@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Velopack 처리를 먼저 하도록 WPF 자동 생성 Main 대신 Program.Main 사용 -->
+    <StartupObject>YTLoader.Program</StartupObject>
+    <ApplicationIcon>..\..\assets\YTLoader.ico</ApplicationIcon>
+    <Product>YTLoader</Product>
+    <Description>Personal YouTube Downloader GUI</Description>
+    <!-- 배포 버전은 build.ps1 -Version 으로 지정 (CI에서는 git 태그) -->
+    <Version>1.0.0</Version>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Velopack" Version="1.2.161" />
+    <PackageReference Include="WPF-UI" Version="4.3.0" />
+  </ItemGroup>
+
+  <!-- WPF 프로젝트는 암시적 using에서 System.IO / System.Net.Http가 빠짐 -->
+  <ItemGroup>
+    <Using Include="System.IO" />
+    <Using Include="System.Net.Http" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="..\..\assets\YTLoader.ico" Link="Assets\YTLoader.ico" />
+  </ItemGroup>
+
+  <!-- 외부 실행 파일 (fetch-deps.ps1 로 받은 bin\*.exe) 을 YTLoader.exe 옆에 둠 -->
+  <ItemGroup>
+    <None Include="..\..\bin\*.exe" Link="%(Filename)%(Extension)" Visible="false" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
